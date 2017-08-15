@@ -12,5 +12,9 @@
           });
         });
 
+      $scope.postProduct = function(product) {
+        console.log(product)
+        tweetService.tweet(product);
+      }
     });
 })();

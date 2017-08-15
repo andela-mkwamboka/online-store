@@ -2,7 +2,8 @@
   "use strict";
 
   angular.module('productApp')
-    .factory('productService', function($resource) {
+    .factory('productService', function() {
+
       var service = {};
       var database = firebase.database();
 

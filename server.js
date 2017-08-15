@@ -3,6 +3,7 @@ var express = require('express');
 
 var app = express();
 
+app.use('/scripts', express.static(__dirname + '/node_modules'));
 app.use(express.static(__dirname + '/public'));
 app.use('/api/products', function(req, res) {
   res.json(products);

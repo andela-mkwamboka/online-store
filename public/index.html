@@ -19,8 +19,8 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
-
     <script src="app.js"></script>
+    <script src="scripts/ng-twitter/dist/ng-twitter.min.js"></script>
     <script src="services/products.js"></script>
     <script src="controller/products.ctrl.js"></script>
 </head>
@@ -32,7 +32,8 @@
                 <div class="card-body" ng-repeat="product in products">
                     <h4 class="card-title">{{ product.name | uppercase}}</h4>
                     <p class="card-text">This {{ product.name }} goes for {{product.price | currency}}.</p>
-                    <a href="#" class="btn btn-primary">Twit</a>
+                    <a class="twitter-share-button" target='_blank' href="https://twitter.com/intent/tweet?text=Get {{ product.name }} of price KSH {{ product.price }} from uuuuuus ">
+Tweet</a>
                 </div>
             </div>
         </div>
