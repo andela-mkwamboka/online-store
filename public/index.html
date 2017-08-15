@@ -2,12 +2,31 @@
 <html>
 
 <head>
-    <title></title>
+    <title>Online Store</title>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDQck_1sMqHUfALxo_buRMwvtGBtMLUgd8",
+            authDomain: "online-store-35a1d.firebaseapp.com",
+            databaseURL: "https://online-store-35a1d.firebaseio.com",
+            projectId: "online-store-35a1d",
+            storageBucket: "online-store-35a1d.appspot.com",
+            messagingSenderId: "355347424437"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
+    <script src="app.js"></script>
+    <script src="services/products.js"></script>
+    <script src="controller/products.ctrl.js"></script>
 </head>
 
-<body ng-app>
-    {{ 1 + 3}}
+<body ng-app="productApp">
+    <div ng-controller="productCtrl">
+        {{ product }}
+    </div>
 </body>
 
 </html>
