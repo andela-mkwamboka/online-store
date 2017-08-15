@@ -3,7 +3,14 @@
 
   angular.module('productApp')
     .controller('productCtrl', function($scope, productService) {
-      $scope.product = productService.populateDB();
+
+      // productService.populateDB();
+      productService.getProducts()
+        .then(products => {
+          $scope.$apply(() => {
+            $scope.products = products;
+          });
+        });
 
     });
 })();

@@ -23,6 +23,11 @@
         });
       };
 
+      service.getProducts = function() {
+        return database.ref('products/').once('value').then(function(snapshot) {
+          return snapshot.val();
+        });
+      };
       return service;
     });
 })();
