@@ -1,0 +1,32 @@
+{
+  "name": "online-store",
+  "version": "1.0.0",
+  "description": "Online store",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-mkwamboka/online-store.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-mkwamboka/online-store/issues"
+  },
+  "homepage": "https://github.com/andela-mkwamboka/online-store#readme",
+  "dependencies": {
+    "angular-ui-router": "^1.0.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "ng-twitter": "0.0.4"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.6.5",
+    "jasmine-core": "^2.7.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.0"
+  }
+}

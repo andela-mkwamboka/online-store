@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Online Store</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDQck_1sMqHUfALxo_buRMwvtGBtMLUgd8",
+            authDomain: "online-store-35a1d.firebaseapp.com",
+            databaseURL: "https://online-store-35a1d.firebaseio.com",
+            projectId: "online-store-35a1d",
+            storageBucket: "online-store-35a1d.appspot.com",
+            messagingSenderId: "355347424437"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
+    <script src="scripts/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app.js"></script>
+    <script src="scripts/ng-twitter/dist/ng-twitter.min.js"></script>
+    <script src="services/products.js"></script>
+    <script src="controller/products.ctrl.js"></script>
+    <base href="/">
+</head>
+
+<body ng-app="productApp">
+    <div class="container">
+
+
+        <div ng-controller="productCtrl">
+            <div class="card" style="width: 20rem;">
+                <a type="button" class="btn btn-default" ng-click="getHistory()">View tweet history</a>
+                <div ng-show="hideProducts">
+
+                    <a type="button" class="btn btn-primary" ng-click="toggle()">View Products</a>
+                    <div class="card-body" ng-repeat="tweet in tweets">
+                        <h4 class="card-title"></h4>
+                        <p class="card-text">You tweeted {{ tweet.name | uppercase}} of {{ tweet.price }}.</p>
+                    </div>
+                </div>
+                <div class="card-body" ng-repeat="product in products" ng-hide="hideProducts">
+                    <h4 class="card-title">{{ product.name | uppercase}}</h4>
+                    <p class="card-text">This {{ product.name }} goes for {{product.price | currency}}.</p>
+                    <a class="twitter-share-button btn btn-info" ng-click="tweetProduct(product)" target='_blank' href="https://twitter.com/intent/tweet?text=Get {{ product.name }} of price KSH {{ product.price }} from online-store&hashtags=assesment,history">
+Tweet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
