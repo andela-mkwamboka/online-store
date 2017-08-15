@@ -23,12 +23,25 @@
           database.ref('products/').push(product);
         });
       };
-
+      // Get product
       service.getProducts = function() {
         return database.ref('products/').once('value').then(function(snapshot) {
           return snapshot.val();
         });
       };
+      // save tweets
+      service.saveProductTweets = function(product) {
+        return database.ref('tweets/').push(product);
+      };
+
+      // get tweets
+      service.getTweets = function() {
+        return database.ref('tweets/').once('value').then(function(snapshot) {
+          console.log(snapshot.val())
+          return snapshot.val();
+        });
+      };
+
       return service;
     });
 })();

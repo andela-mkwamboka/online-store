@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/andela-mkwamboka/online-store#readme",
   "dependencies": {
+    "angular-ui-router": "^1.0.3",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "ng-twitter": "0.0.4"
